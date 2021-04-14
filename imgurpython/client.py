@@ -583,6 +583,9 @@ class ImgurClient(object):
         with open(path, 'rb') as fd:
             self.upload(fd, config, anon)
 
+    def upload_from_image(self, image, config=None, anon=True):
+        return self.upload(image, config, anon)
+
     def upload(self, fd, config=None, anon=True):
         if not config:
             config = dict()
